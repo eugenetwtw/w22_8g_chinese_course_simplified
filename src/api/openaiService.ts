@@ -110,7 +110,7 @@ export const gradeEssay = async (request: EssayGradingRequest): Promise<OpenAIRe
           .map((criterion: any) => `    - ${criterion.level}: ${criterion.description}`)
           .join('\n');
         
-        return `  ${section.title}:\n${criteriaText}`;
+        return `  ${sectionKey} - ${section.title}:\n${criteriaText}`;
       })
       .join('\n\n');
 
